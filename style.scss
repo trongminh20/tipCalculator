@@ -1,111 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-$box--color:hsl(183, 100%, 15%);
-$txt--bg--color:hsl(184, 14%, 56%);
-$font--color: hsl(186, 14%, 43%);
-$font--color--light:hsl(172, 67%, 45%);
-$main--color:hsl(185, 41%, 84%);
-$btn--color: hsl(172, 67%, 45%);
-$default--font-size:24px;
-$min--width:375px;
-$max--width:1440px;
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$darkGrayishCyan--second: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$lightGrayishCyan--second: hsl(189, 41%, 97%);
+$whiteColor: hsl(0, 0%, 100%);
 
-body{
-  font-family:"Space Mono", monospace;
-}
-
-.wraper{
-  height: 100vh;
-  overflow: hidden;
-  background-color: $main--color;
-}
-
-#app--name{
-  height: 20vh; 
-  display:flex;
+.main {
+  background-color: $lightGrayishCyan;
+  font-family: "Space Mono";
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   justify-content: center;
+  align-items: center;
+}
+.header,
+.form {
+  width: 100%;
+}
+.header {
+  height: 20vh;
+  display:flex;
+  justify-content:center;
   align-items: center;
   h1{
     font-size:24px;
-    line-height: 1;
+    font-weight: bold;
+    color:$darkGrayishCyan;
   }
 }
-
-#form--section{
-  height: 80vh;
-  width:100%;
+.form {
+  background-color:white;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   padding-top:20px;
   padding-bottom:20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  margin:auto;
-  background-color:white;
-  .form{
-    display:flex;
+  &__input{
+    background-color: $lightGrayishCyan--second;
+    border:none;
+    border-radius: 5px;
+    height:30px;
+  }
+  &__group {
+    display: flex;
     flex-direction: column;
-    row-gap:20px;
-    &__group{
-      width: 80%;
-      margin:auto;
-    }
-    &__group:not(#btns--group){
-      display: flex;
-      flex-direction:column;
-      row-gap:10px;
-    }
-   
-    &__input{
-      border:none;
-      border-radius:5px;
-      background-color:$main--color;
-      height: 30px;
+    row-gap: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    &--btns {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-gap: 10px;
     }
   }
 }
-#btns--group{
-  display:grid;
-  grid-template-columns: 50% 50%;
-  grid-gap:10px;
-  margin:auto;
-  legend{
-    grid-column: 1/ span 2;
-  }
-}
-
 .btn{
-  width: 100%;
-  height: 30px;
-  background-color:$box--color;
-  border:none;
-  border-radius: 5px;
-  color:white;
-  font-weight: bold;
-  &:hover{
-    background-color:$btn--color;
-    color:$box--color;
+  &--primary{
+    width: 80%;
+    margin:auto;
+    background-color:$darkGrayishCyan--second;
+    
   }
-}
-
-#btn-custom{
-  background-color:$main--color;
-  color:$font--color;
-}
-.notice{
-  color:$font--color;
-  font-size: 14px;
+  width: 95%;
+  height: 30px;
+  font-weight: bold;
+  border:none;
+  border-radius:5px;
+  background-color:$veryDarkCyan;
+  color:white;
+  &:hover{
+    color:$veryDarkCyan;
+    background-color: $strongCyan;
+  }
 }
 
 .display{
-  &__section{
+  background-color:$veryDarkCyan;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: column;
+  row-gap:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  &__tip,
+  &__total{
+    width: 80%;
+    margin:auto;
+    color:white;
     display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    align-content: center;
   }
-}
-footer{
-  position:abosolute;
-  bottom:0;
-  width: 100%;
-  background-color:$main--color;
 }
