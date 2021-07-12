@@ -24,13 +24,14 @@
   <div class="header">
     <h1>S P L I <br>T T E R</h1>
   </div>
-  <div class="form">
-    <form action="">
-      <div class="form__group">
+  
+    <form class="form"action="">
+      <!-- <div id="control"> -->
+      <div class="form__group form__group__input" id="price">
         <label for="">Bill</label>
         <input type="text" class="form__input" id="bill--price">
       </div>
-      <div class="form__group form__group--btns">
+      <div class="form__group form__group--btns" >
         <button class="btn btn--secondary">5%</button>
         <button class="btn btn--secondary">10%</button>
         <button class="btn btn--secondary">15%</button>
@@ -38,23 +39,24 @@
         <button class="btn btn--secondary">50%</button>
         <button class="btn btn--secondary" id="btn--custom">Custom</button>
       </div>
-      <div class="form__group">
+      <div class="form__group form__group--input" id="num--people">
         <label for="">Number of People</label>
         <input type="text" class="form__input" id="num--people">
       </div>
-      <div class="form__group display">
-        <div class="display__tip">
+    <!-- </div> -->
+      <div class="form__group form__group--display">
+        <div class="form__group--display__tip">
           <p>Tip Amount<br><span class="notice">/person</span></p>
-          <p></p>
+          <p class="amount">0.00</p>
         </div>
-        <div class="display__total">
+        <div class="form__group--display__total">
           <p>Total<br><span class="notice">/person</span></p>
-          <p></p>
+          <p class="amount">0.00</p>
         </div>
         <button class='btn btn--primary'>RESET</button>
       </div>
     </form>
-  </div>
+  
  </div>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

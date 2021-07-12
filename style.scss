@@ -38,11 +38,22 @@ $whiteColor: hsl(0, 0%, 100%);
   border-top-left-radius: 15px;
   padding-top:20px;
   padding-bottom:20px;
+  @media screen and (min-width:800px){
+    width: 70%;
+    height: 60vh;
+    margin:auto;
+  }
+  form{
+    display:flex;
+    flex-direction: column;
+    row-gap:10px;
+  }
   &__input{
     background-color: $lightGrayishCyan--second;
     border:none;
     border-radius: 5px;
     height:30px;
+    
   }
   &__group {
     display: flex;
@@ -56,6 +67,18 @@ $whiteColor: hsl(0, 0%, 100%);
       display: grid;
       grid-template-columns: 50% 50%;
       grid-gap: 10px;
+      #btn--custom{
+        background-color: $lightGrayishCyan--second;
+        color:$darkGrayishCyan;
+      }
+    }
+    &__input{
+      grid-area: "control";
+    }
+    
+    label{
+      font-weight: bold;
+      color:$darkGrayishCyan--second;
     }
   }
 }
@@ -64,7 +87,7 @@ $whiteColor: hsl(0, 0%, 100%);
     width: 80%;
     margin:auto;
     background-color:$darkGrayishCyan--second;
-    
+    color:$darkGrayishCyan;
   }
   width: 95%;
   height: 30px;
@@ -79,7 +102,7 @@ $whiteColor: hsl(0, 0%, 100%);
   }
 }
 
-.display{
+.form__group--display{
   background-color:$veryDarkCyan;
   border-radius: 5px;
   display:flex;
@@ -89,11 +112,60 @@ $whiteColor: hsl(0, 0%, 100%);
   padding-bottom:20px;
   &__tip,
   &__total{
-    width: 80%;
+    width: 90%;
     margin:auto;
     color:white;
+    font-weight: bold;
+    font-size:14px;
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
     align-content: center;
   }
+}
+.notice {
+  font-size:12px;
+  color:$lightGrayishCyan;
+}
+.amount{
+  font-size:20px;
+  color:$strongCyan;
+  &::before{
+    content:"$";
+  }
+}
+
+@media screen and (min-width:800px){
+  .form{
+    width: 600px;
+    height: 300px;;
+    margin:ato;
+    display:grid;
+    grid-template-columns:50% 50%;
+    grid-template-rows:auto;
+    margin-bottom:100px;
+    border-radius: 15px;; 
+    &__group{
+      &--input{
+        grid-area: input;
+      }
+      &--btns{
+        grid-area:btns;
+        grid-column: 1;
+        grid-row:2;
+      }
+      &--display{
+        grid-area:total;
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end:4;
+      }
+    }
+    #num--people{
+      grid-column: 1;
+      grid-row:3;
+    }
+  }
+
+  
 }
