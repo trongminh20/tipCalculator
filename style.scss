@@ -23,37 +23,29 @@ $whiteColor: hsl(0, 0%, 100%);
 }
 .header {
   height: 20vh;
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  h1{
-    font-size:24px;
+  h1 {
+    font-size: 24px;
     font-weight: bold;
-    color:$darkGrayishCyan;
+    color: $darkGrayishCyan;
   }
 }
 .form {
-  background-color:white;
+  background-color: white;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  padding-top:20px;
-  padding-bottom:20px;
-  @media screen and (min-width:800px){
-    width: 70%;
-    height: 60vh;
-    margin:auto;
-  }
-  form{
-    display:flex;
-    flex-direction: column;
-    row-gap:10px;
-  }
-  &__input{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  &__input {
     background-color: $lightGrayishCyan--second;
-    border:none;
+    border: none;
     border-radius: 5px;
-    height:30px;
-    
+    height: 30px;
   }
   &__group {
     display: flex;
@@ -61,111 +53,105 @@ $whiteColor: hsl(0, 0%, 100%);
     row-gap: 10px;
     width: 90%;
     margin: auto;
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     &--btns {
       display: grid;
       grid-template-columns: 50% 50%;
       grid-gap: 10px;
-      #btn--custom{
+      #btn--custom {
         background-color: $lightGrayishCyan--second;
-        color:$darkGrayishCyan;
+        color: $darkGrayishCyan;
       }
     }
-    &__input{
-      grid-area: "control";
+    &--display {
+      background-color: $veryDarkCyan;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      &__tip,
+      &__total {
+        width: 90%;
+        margin: auto;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+      }
     }
-    
-    label{
+    label {
       font-weight: bold;
-      color:$darkGrayishCyan--second;
+      color: $darkGrayishCyan--second;
     }
   }
 }
-.btn{
-  &--primary{
+.btn {
+  &--primary {
     width: 80%;
-    margin:auto;
-    background-color:$darkGrayishCyan--second;
-    color:$darkGrayishCyan;
+    margin: auto;
+    background-color: $darkGrayishCyan--second;
+    color: $darkGrayishCyan;
   }
   width: 95%;
   height: 30px;
   font-weight: bold;
-  border:none;
-  border-radius:5px;
-  background-color:$veryDarkCyan;
-  color:white;
-  &:hover{
-    color:$veryDarkCyan;
+  border: none;
+  border-radius: 5px;
+  background-color: $veryDarkCyan;
+  color: white;
+  &:hover {
+    color: $veryDarkCyan;
     background-color: $strongCyan;
   }
 }
 
-.form__group--display{
-  background-color:$veryDarkCyan;
-  border-radius: 5px;
-  display:flex;
-  flex-direction: column;
-  row-gap:20px;
-  padding-top:20px;
-  padding-bottom:20px;
-  &__tip,
-  &__total{
-    width: 90%;
-    margin:auto;
-    color:white;
-    font-weight: bold;
-    font-size:14px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-  }
-}
 .notice {
-  font-size:12px;
-  color:$lightGrayishCyan;
+  font-size: 12px;
+  color: $lightGrayishCyan;
 }
-.amount{
-  font-size:20px;
-  color:$strongCyan;
-  &::before{
-    content:"$";
+.amount {
+  font-size: 20px;
+  color: $strongCyan;
+  &::before {
+    content: "$";
   }
 }
 
-@media screen and (min-width:800px){
-  .form{
+@media screen and (min-width: 800px) {
+  .form {
     width: 600px;
-    height: 300px;;
-    margin:ato;
-    display:grid;
-    grid-template-columns:50% 50%;
-    grid-template-rows:auto;
-    margin-bottom:100px;
-    border-radius: 15px;; 
-    &__group{
-      &--input{
-        grid-area: input;
-      }
-      &--btns{
-        grid-area:btns;
+    height: 300px;
+    margin: ato;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    margin-bottom: 100px;
+    border-radius: 15px;
+    &__group {
+      &--btns {
+        grid-area: btns;
         grid-column: 1;
-        grid-row:2;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-gap: 5px;
       }
-      &--display{
-        grid-area:total;
+      &--display {
+        grid-area: total;
         grid-column: 2;
         grid-row-start: 1;
-        grid-row-end:4;
+        grid-row-end: 4;
       }
     }
-    #num--people{
+    #num--people {
       grid-column: 1;
-      grid-row:3;
+      grid-row: 3;
     }
   }
-
-  
 }

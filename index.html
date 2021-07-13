@@ -9,6 +9,7 @@
   <title>Frontend Mentor | Tip calculator app</title>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link rel="stylesheet" href="style.css">
+  <script src="mainJS.js" type="text/javascript"></script>
   <style>
     .attribution {
       font-size: 11px;
@@ -25,18 +26,18 @@
     <h1>S P L I <br>T T E R</h1>
   </div>
   
-    <form class="form"action="">
+    <div class="form">
       <!-- <div id="control"> -->
       <div class="form__group form__group__input" id="price">
         <label for="">Bill</label>
         <input type="text" class="form__input" id="bill--price">
       </div>
       <div class="form__group form__group--btns" >
-        <button class="btn btn--secondary">5%</button>
-        <button class="btn btn--secondary">10%</button>
-        <button class="btn btn--secondary">15%</button>
-        <button class="btn btn--secondary">25%</button>
-        <button class="btn btn--secondary">50%</button>
+        <button class="btn btn--secondary" onclick="btnHandle(this)">5%</button>
+        <button class="btn btn--secondary" onclick="btnHandle(this)" >10%</button>
+        <button class="btn btn--secondary" onclick="btnHandle(this)">15%</button>
+        <button class="btn btn--secondary" onclick="btnHandle(this);">25%</button>
+        <button class="btn btn--secondary" onclick="btnHandle(this)">50%</button>
         <button class="btn btn--secondary" id="btn--custom">Custom</button>
       </div>
       <div class="form__group form__group--input" id="num--people">
@@ -47,15 +48,15 @@
       <div class="form__group form__group--display">
         <div class="form__group--display__tip">
           <p>Tip Amount<br><span class="notice">/person</span></p>
-          <p class="amount">0.00</p>
+          <p class="amount" id="tip--amount">0.00</p>
         </div>
         <div class="form__group--display__total">
           <p>Total<br><span class="notice">/person</span></p>
-          <p class="amount">0.00</p>
+          <p class="amount" id="total--amount">0.00</p>
         </div>
-        <button class='btn btn--primary'>RESET</button>
+        <button class='btn btn--primary' onclick="reset()">RESET</button>
       </div>
-    </form>
+    </div>
   
  </div>
   <footer class="attribution">
