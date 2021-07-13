@@ -38,7 +38,10 @@
         <button class="btn btn--secondary" onclick="btnHandle(this)">15%</button>
         <button class="btn btn--secondary" onclick="btnHandle(this);">25%</button>
         <button class="btn btn--secondary" onclick="btnHandle(this)">50%</button>
-        <button class="btn btn--secondary" id="btn--custom">Custom</button>
+        <button class="btn btn--secondary" id="btn--custom" onclick="displayCustom(document.getElementById('custom'));">Custom</button>
+        <div class="form__group form__group--input" id="custom">
+          <input type="text" placeholder="Enter your tip" class="form__input" id="custom--input">
+        </div>
       </div>
       <div class="form__group form__group--input" id="num--people">
         <label for="">Number of People</label>

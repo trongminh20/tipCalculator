@@ -20,3 +20,11 @@ function reset(){
   document.getElementById('tip--amount').innerHTML= "0.00";
   document.getElementById('bill--price').value = 0;
 }
+
+function displayCustom(item){
+ if(item.style.display === "none"){
+   item.style.display = "block";
+ }else{
+   item.style.display = "none";
+ }
+}
